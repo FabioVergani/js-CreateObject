@@ -1,0 +1,37 @@
+
+
+
+var obj=(Function.prototype.call).bind(Object.create,null,null);
+
+var o;
+console.dir(o=obj());
+
+console.dir(o=obj({
+	foo:{
+		writable:true,
+		configurable:true,
+		value:'hello'
+	}
+}));
+
+o.foo='ciao';
+console.dir(o);
+
+
+delete o.foo;
+console.dir(o);
+
+
+console.dir(o=obj({
+	bar:{
+		writable:true,
+		configurable:false,
+		value:'hello'
+	}
+}));
+
+delete o.bar;
+console.dir(o);
+
+o.bar=123;
+console.dir(o);
