@@ -9,7 +9,7 @@ var obj=function(props){
   for(i in o){a=b[i]=f(x);e=o[i];for(i in e){a[i]=e[i];};};
   return f(b);
 }.bind(
- {
+ Seal({
   a:CreateObject,
   b:{
 	value:{value:undefined,writable:true,configurable:false,enumerable:true},
@@ -17,7 +17,7 @@ var obj=function(props){
 	enumerable:{value:true,writable:true,configurable:false},
 	writable:{value:true,writable:true,configurable:false}
   }
- }
+ })
 );
 
 //================
