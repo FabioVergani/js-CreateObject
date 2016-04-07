@@ -1,14 +1,15 @@
 var w=window,
-Call=Function.prototype.call,
+Call=w.Function.prototype.call,
+Object=w.Object,
 Create=Call.bind(Object.create,null,null),
-CreateByDescriptor=function(props){
- var e,o=props,p,i=this,x=i.x,f=i.f,d=f();
- for(p in o){i=d[p]=f(x);e=o[p];for(p in e){i[p]=e[p];};};
+CreateByDescriptor=function(x){
+ var e,o=x,p,i=this,t=i.t,f=i.f,d=f();
+ for(p in o){i=d[p]=f(t);e=o[p];for(p in e){i[p]=e[p];};};
  return f(d);
 }.bind(
  Object.freeze({
   f:Create,
-  x:{
+  t:{
 	value:{value:undefined,writable:true,configurable:false,enumerable:true},
 	configurable:{value:true,writable:true,configurable:false},
 	enumerable:{value:true,writable:true,configurable:false},
@@ -16,7 +17,6 @@ CreateByDescriptor=function(props){
   }
  })
 );
-
 //================
 console.dir(CreateByDescriptor({
 name1:{value:'1',enumerable:false},
