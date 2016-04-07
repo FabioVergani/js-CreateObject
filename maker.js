@@ -1,15 +1,14 @@
 var w=window,
 Call=w.Function.prototype.call,
-O=w.Object,
-Seal=O.seal,
-CreateObject=Call.bind(O.create,null,null);
+Object=w.Object,
+CreateObject=Call.bind(Object.create,null,null);
 //
 var obj=function(props){
   var e, i, o=props, a=this, f=a.a, b=f(), x=a.b;
   for(i in o){a=b[i]=f(x);e=o[i];for(i in e){a[i]=e[i];};};
   return f(b);
 }.bind(
- Seal({
+ Object.seal({
   a:CreateObject,
   b:{
 	value:{value:undefined,writable:true,configurable:false,enumerable:true},
