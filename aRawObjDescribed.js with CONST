@@ -1,11 +1,11 @@
 javascript:void(function($){'use strict';
- const o=$,p='uid-x';
+ const%20o=$,p='uid-x';
  (o[p]||(o[p]=(function($){
-	const w=$,
-	Obj=w.Object,
-	Seal=Obj.seal,
-	Freeze=Obj.freeze,
-	Create=Obj.create,
+	const%20w=$,
+	O=w.Object,
+	Seal=O.seal,
+	Freeze=O.freeze,
+	Create=O.create,
 	Call=w.Function.prototype.call,
 	aRawObj=Freeze(Call.bind(Create,null,null)),
 	aRawObjDescribed=Freeze(function(k){const%20o=k,f=aRawObj,d=f(),t=this;var p,i,e;for(p in o){i=d[p]=f(t);for(p in (e=o[p])){i[p]=e[p];};};return f(d);}.bind(function(u){var p=true;const%20f=Create,e=aRawObj(),s=Seal,o=s({value:p,writable:p,enumerable:p,configurable:false});for(p in o){e[p]=f(o);};e[p='value'][p]=u;return s(e);}())),
@@ -17,20 +17,20 @@ javascript:void(function($){'use strict';
 	 locked:{value:false},
 	 opened:{value:null},
 	 go:{value:Freeze(function($){
+		const%20o=sealed;
+		if(o.locked===false){
+		 const%20w=$,d=w.document,dE=d.documentElement;
+		 if(dE!==null){
+			const%20f=function(evt){
+				log(666);
 
 
-log(123);
-
-
-console.dir(aRawObjDescribed({
-   go:{
-    value:function($){
-      console.dir(this);
-    }
-   }
-  }));
-
-
+				o.locked=false;
+			};
+			o.locked=true;
+			if(d.readyState==='complete'){f({currentTarget:w});}else{once(w,'load',f);};
+		 };
+		};
 	 }),writable:false}
 	}));
 	return sealed.go;
